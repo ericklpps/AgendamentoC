@@ -1,4 +1,4 @@
-## OdontoGendaC
+## OdontoGenda
 Aplicação ASP.NET MVC para agendamento de consultas odontológicas, com funcionalidades CRUD e interface estilizada com Bootstrap.
 
 
