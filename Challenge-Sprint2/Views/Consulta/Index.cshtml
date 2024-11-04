@@ -1,0 +1,35 @@
+﻿@model List<OdontoGendaC.Models.Consulta>
+
+<div class="container mt-5 text-center">
+    <h1 class="mb-4">Consultas Agendadas</h1>
+
+    <a class="btn btn-primary mb-4" href="/Consulta/Create">Agendar Nova Consulta</a>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Paciente</th>
+                <th>Dentista</th>
+                <th>Data</th>
+                <th>Horário</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var consulta in Model)
+            {
+                <tr>
+                    <td>@consulta.NomePaciente</td>
+                    <td>@consulta.Dentista</td>
+                    <td>@consulta.DataConsulta.ToShortDateString()</td>
+                    <td>@consulta.Horario</td>
+                    <td>
+                        <a class="btn btn-info" href="/Consulta/Details/@consulta.Id">Detalhes</a>
+                        <a class="btn btn-warning" href="/Consulta/Edit/@consulta.Id">Editar</a>
+                        <a class="btn btn-danger" href="/Consulta/Delete/@consulta.Id">Excluir</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

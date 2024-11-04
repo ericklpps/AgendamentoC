@@ -1,0 +1,29 @@
+﻿@model OdontoGendaC.Models.Consulta
+
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Excluir Consulta</h1>
+    <p class="text-center">Tem certeza de que deseja excluir esta consulta?</p>
+
+    <dl class="row">
+        <dt class="col-sm-3">Paciente</dt>
+        <dd class="col-sm-9">@Model.NomePaciente</dd>
+
+        <dt class="col-sm-3">Dentista</dt>
+        <dd class="col-sm-9">@Model.Dentista</dd>
+
+        <dt class="col-sm-3">Data</dt>
+        <dd class="col-sm-9">@Model.DataConsulta.ToShortDateString()</dd>
+
+        <dt class="col-sm-3">Horário</dt>
+        <dd class="col-sm-9">@Model.Horario</dd>
+
+        <dt class="col-sm-3">Observações</dt>
+        <dd class="col-sm-9">@Model.Observacoes</dd>
+    </dl>
+
+    <form method="post" action="/Consulta/DeleteConfirmed">
+        <input type="hidden" asp-for="Id" />
+        <button type="submit" class="btn btn-danger">Excluir</button>
+        <a href="/Consulta/Index" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>
